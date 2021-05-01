@@ -14,9 +14,7 @@ class App extends React.Component {
       menu: 0,
       menuItem: 0
     }
-
     this.angle = 0;
-
   }
 
   changeMenu = (item) => {
@@ -34,7 +32,6 @@ class App extends React.Component {
         visualscreen: this.state.visualscreen + 1
       })
     }
-
     if (this.state.visualscreen === 0) {
       this.setState({
         menu: this.state.menuItem,
@@ -57,6 +54,10 @@ class App extends React.Component {
     }
   }
 
+  // Zingtouch library functionality
+  //   angle - The angle of the initial right most input, in relation to the unit circle.
+  // distanceFromOrigin - The angular distance traveled by the initial right most post.
+  // distanceFromLast - The change of angle between the last position and the current position. Positive denotes a counter-clockwise motion, while negative denotes a clockwise motion.
   zingtouchpos = (menu_pos_change) => {
     const containerEle = document.getElementById("wheel")
     const activeReg = ZingTouch.Region(containerEle)
@@ -71,7 +72,6 @@ class App extends React.Component {
       if (event.detail.distanceFromOrigin === 0) {
         this.angle = event.detail.angle
       }
-
       if (Math.abs(this.angle - event.detail.angle) > 15) {
         this.angle = Math.abs(event.detail.angle)
         if (event.detail.distanceFromLast === 0) {
@@ -99,7 +99,6 @@ class App extends React.Component {
     return (
       <div className="back-cover" >
         <div className="main">
-
           <VisualScreen
             screen={this.state.visualscreen}
             menuScreen={this.state.menu}
@@ -112,6 +111,10 @@ class App extends React.Component {
             enterMenu={this.inMenu}
             exitMenu={this.backMenu}
           />
+        </div>
+
+        <div style={{ textAlign: 'center', paddingTop: 50, fontSize: 14 }}>
+          <p>Click and hold on the circular menu</p>
         </div>
 
       </div>

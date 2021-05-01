@@ -5,6 +5,7 @@ class MenuScreen extends React.Component {
     componentDidMount() {
         this.props.pickMenu(this.props.menu_pos_change)
     }
+
     render() {
         let menuItem = this.props.menuItem
         let menuList = ["Cover Flow", "Music", "Games", "Settings"]
@@ -15,12 +16,10 @@ class MenuScreen extends React.Component {
                 m === menuItem ? (
                     <li className="list-items active" key={"m" + menuList[m]}>
                         <span>{menuList[m]}</span>
-
                     </li>
                 ) : (
                     <li className="list-items" key={"m" + menuList[m]}>
                         <span>{menuList[m]}</span>
-
                     </li>
                 )
             )
