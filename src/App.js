@@ -54,10 +54,6 @@ class App extends React.Component {
     }
   }
 
-  // Zingtouch library functionality
-  //   angle - The angle of the initial right most input, in relation to the unit circle.
-  // distanceFromOrigin - The angular distance traveled by the initial right most post.
-  // distanceFromLast - The change of angle between the last position and the current position. Positive denotes a counter-clockwise motion, while negative denotes a clockwise motion.
   zingtouchpos = (menu_pos_change) => {
     const containerEle = document.getElementById("wheel")
     const activeReg = ZingTouch.Region(containerEle)
@@ -84,7 +80,7 @@ class App extends React.Component {
           menu_pos_change(i)
           i++
         } else if (event.detail.distanceFromOrigin < 0) {
-          if (j == 0) {
+          if (j === 0) {
             j = len - i
             menu_pos_change(j)
           }

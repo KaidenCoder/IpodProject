@@ -8,7 +8,7 @@ class IpodTouch extends React.Component {
         const backBtn = document.getElementById("menu-btn")
         const activeMenuBtn = ZingTouch.Region(backBtn)
 
-        // Go Back Button
+
         activeMenuBtn.bind(backBtn, "tap", function (event) {
             return exitMenu()
         })
@@ -35,7 +35,7 @@ class IpodTouch extends React.Component {
                             <i className="fas fa-play"></i> <i className="fas fa-pause"></i>
                         </div>
                     </div>
-                    {/* Enter inside the menu button */}
+
                     <div id="okay-btn" style={stylesheet.selectBtn}
                         onClick={() => {
                             if (screen >= 0) {

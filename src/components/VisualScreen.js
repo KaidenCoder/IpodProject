@@ -11,7 +11,6 @@ const VisualScreen = (props) => {
     let displayMenu = props.menuScreen
     let displayScreen
 
-    // Index 0 Screen is the starting Screen
     if (screen === 0) {
         displayScreen = (
             <MenuScreen
@@ -22,7 +21,7 @@ const VisualScreen = (props) => {
             />
         )
     }
-    // Index 1 Screen belongs to CoverFlow, Music, Games, and Settings
+
     else if (screen === 1) {
 
         if (displayMenu === 0) {
